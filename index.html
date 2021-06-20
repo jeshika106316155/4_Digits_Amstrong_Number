@@ -1,0 +1,34 @@
+<body>
+<title>阿姆斯壯數</title>
+<script>
+    //找出4位數的阿姆斯壯數
+    function digit4()
+    {
+        var count=1000,num,sum;
+        while(count <= 9999)  //4位數的阿姆斯壯數是從1000-9999的數字
+        { 
+            num = count.toString(); //把數字轉成字串 (字串可以取各個數字)
+            sum = Math.pow(num[0],4)+Math.pow(num[1],4)+Math.pow(num[2],4)+Math.pow(num[3],4); //計算阿姆斯壯數
+
+            if(count == sum)  //判斷阿姆斯壯數
+            {  
+                document.getElementById("armstrong").value += count+"\n"; //是阿姆斯壯數才因出來
+            }  
+            count++; 
+        } 
+    }
+</script>
+<body>
+所謂n位數的阿姆斯壯數是指一個數字正好等於各個位數的n次方和<br>
+3位數的阿姆斯壯數如153=1<sup>3</sup>+5<sup>3</sup>+3<sup>3</sup><br>
+4位數的阿姆斯壯數如8208=8<sup>4</sup>+2<sup>4</sup>+0<sup>4</sup>+8<sup>4</sup><hr>
+Javascript中，數字a的b次方，可以用Math.pow(a,b)來計算<br>
+例如Math.pow(2,3)會等於8<br>
+Math.pow(3,2)會等於9
+<hr>
+顯示所有4位數的阿姆斯壯數<br>
+<textarea id="armstrong" rows=30 cols=10></textarea>
+<input type="button" value="顯示四位數的阿姆斯壯數" onclick="digit4()"
+
+
+</body>
